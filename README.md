@@ -12,9 +12,8 @@
 ## Deploy a bastion host
 
 ```sh
-npm install
-npx cdk diff
-npx cdk deploy
+make cdk/diff
+make cdk/deploy
 ```
 
 ## Connect to a bastion host
@@ -22,14 +21,5 @@ npx cdk deploy
 - [(Optional) Install the Session Manager plugin for the AWS CLI - AWS Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html#install-plugin-macos)
 
 ```sh
-aws ssm start-session --target ${instance_id}
+make aws/ssm
 ```
-
-## Useful commands
-
-- `npm run build` compile typescript to js
-- `npm run watch` watch for changes and compile
-- `npm run test` perform the jest unit tests
-- `cdk deploy` deploy this stack to your default AWS account/region
-- `cdk diff` compare deployed stack with current state
-- `cdk synth` emits the synthesized CloudFormation template
